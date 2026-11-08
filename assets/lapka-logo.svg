@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="330" height="110" viewBox="0 0 330 110" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Лапка</title>
+  <desc id="logo-description">Логотип магазину Лапка: зелений знак із написом «лап» і назва «лапка».</desc>
+  <g transform="rotate(-5 55 55)">
+    <path d="M39 5h32a34 34 0 0 1 34 34v32a34 34 0 0 1-34 34H9a4 4 0 0 1-4-4V39A34 34 0 0 1 39 5Z" fill="#c9ef74"/>
+    <text x="55" y="65" fill="#193d2d" font-family="DM Sans, Manrope, Arial, sans-serif" font-size="35" font-weight="800" letter-spacing="-2.5" text-anchor="middle" dominant-baseline="central">лап</text>
+  </g>
+  <text x="132" y="78" fill="#1d2921" font-family="Manrope, Arial, sans-serif" font-size="60" font-weight="800" letter-spacing="-6.2">лапка</text>
+  <circle cx="313" cy="73" r="4.8" fill="#84aa39"/>
+</svg>
