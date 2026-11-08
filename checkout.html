@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f5ef" />
+    <title>Оформлення замовлення — Лапка</title>
+    <meta name="description" content="Перевірте склад кошика та введіть дані для демонстраційного оформлення замовлення." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="product-data.js" defer></script>
+    <script src="site-navigation.js" defer></script>
+    <script src="cookie-consent.js" defer></script>
+    <script src="checkout.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement">
+      <div class="container announcement__inner">
+        <span>Доставка безкоштовна від 1 500 ₴</span>
+        <span class="announcement__separator" aria-hidden="true">✳</span>
+        <span>Піклуємось про хвостиків щодня</span>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container checkout-header">
+        <a class="brand" href="index.html#home" aria-label="Лапка — на головну">
+          <span class="brand__icon" aria-hidden="true">лап</span>
+          <span class="brand__name">лапка<span>.</span></span>
+        </a>
+        <span class="checkout-header__secure"><span aria-hidden="true">✓</span> Безпечне оформлення</span>
+        <a class="checkout-header__back" href="catalog.html?openCart=1"><span aria-hidden="true">←</span> Повернутися до кошика</a>
+      </div>
+    </header>
+
+    <main class="checkout-page">
+      <div class="container">
+        <nav class="catalog-breadcrumbs" aria-label="Навігаційний ланцюжок">
+          <a href="index.html">Головна</a><span aria-hidden="true">/</span>
+          <a href="catalog.html?openCart=1">Кошик</a><span aria-hidden="true">/</span>
+          <span aria-current="page">Оформлення</span>
+        </nav>
+        <div class="checkout-page__heading">
+          <div><span class="eyebrow">Ще кілька кроків до радості</span><h1>Оформлення замовлення</h1></div>
+          <p>Усі поля заповнюються на одній сторінці</p>
+        </div>
+        <ol class="checkout-progress" aria-label="Етапи оформлення">
+          <li><span>1</span> Контактні дані</li>
+          <li><span>2</span> Доставка й оплата</li>
+          <li><span>3</span> Перевірка замовлення</li>
+        </ol>
+
+        <div class="checkout-empty" data-checkout-empty hidden>
+          <span aria-hidden="true">🛍</span>
+          <h2>Кошик поки порожній</h2>
+          <p>Додайте товари, які сподобалися, і повертайтеся до оформлення.</p>
+          <a class="button button--dark" href="catalog.html">Перейти до каталогу <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="checkout-grid" data-checkout-grid>
+          <form class="checkout-form-page" id="checkout-form" data-checkout-form novalidate>
+            <section class="checkout-section" aria-labelledby="checkout-contact-title">
+              <div class="checkout-section__heading">
+                <span class="checkout-section__number">1</span>
+                <div><h2 id="checkout-contact-title">Контактні дані</h2><p>Щоб ми знали, з ким зв’язатися</p></div>
+              </div>
+              <div class="checkout-fields checkout-fields--two">
+                <label>Ім’я та прізвище <span>*</span>
+                  <input name="name" autocomplete="name" required maxlength="100" placeholder="Наприклад, Олена Коваль" />
+                </label>
+                <label>Номер телефону <span>*</span>
+                  <input name="phone" type="tel" autocomplete="tel" required maxlength="30" placeholder="+380 00 000 00 00" />
+                </label>
+                <label class="checkout-fields__full">Електронна пошта <small>необов’язково</small>
+                  <input name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" />
+                </label>
+              </div>
+            </section>
+
+            <section class="checkout-section" aria-labelledby="checkout-delivery-title">
+              <div class="checkout-section__heading">
+                <span class="checkout-section__number">2</span>
+                <div><h2 id="checkout-delivery-title">Доставка</h2><p>Оберіть спосіб отримання замовлення</p></div>
+              </div>
+              <div class="checkout-fields checkout-fields--two">
+                <label class="checkout-fields__full">Служба доставки <span>*</span>
+                  <span class="checkout-select">
+                    <select name="delivery-service" data-delivery-service required>
+                      <option value="" selected disabled>Оберіть службу доставки</option>
+                      <option value="Нова пошта">Нова пошта</option>
+                      <option value="Укрпошта">Укрпошта</option>
+                      <option value="Meest">Meest</option>
+                      <option value="Кур’єрська доставка">Кур’єрська доставка</option>
+                    </select>
+                  </span>
+                </label>
+                <div class="checkout-city-field" data-city-field>
+                  <label for="checkout-city">Місто <span>*</span></label>
+                  <input id="checkout-city" name="city" type="text" autocomplete="address-level2" required maxlength="100" placeholder="Наприклад, Київ" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="checkout-city-suggestions" />
+                  <div class="checkout-city-suggestions" id="checkout-city-suggestions" role="listbox" aria-label="Варіанти населених пунктів" hidden></div>
+                </div>
+                <label data-delivery-address-label>Відділення або адреса <span>*</span>
+                  <input name="delivery-address" autocomplete="street-address" required maxlength="200" placeholder="Номер відділення, поштомата або адреса" />
+                </label>
+                <p class="checkout-demo-note checkout-fields__full"><span aria-hidden="true">ℹ</span> Вибір доставки демонстраційний: тарифи, строки й реальне відправлення не підключені.</p>
+              </div>
+            </section>
+
+            <section class="checkout-section" aria-labelledby="checkout-payment-title">
+              <div class="checkout-section__heading">
+                <span class="checkout-section__number">3</span>
+                <div><h2 id="checkout-payment-title">Оплата</h2><p>Оплата в демонстраційній версії не проводиться</p></div>
+              </div>
+              <label class="checkout-payment-option">
+                <input type="radio" name="payment" value="demo" checked />
+                <span class="checkout-payment-option__radio"></span>
+                <span><strong>Без оплати — демо-оформлення</strong><small>Дані картки не запитуються, кошти не списуються.</small></span>
+                <span class="checkout-payment-option__badge">Демо</span>
+              </label>
+              <div class="checkout-payment-disabled" aria-disabled="true">
+                <span aria-hidden="true">▤</span><span><strong>Онлайн-оплата</strong><small>Буде доступна після підключення платіжного сервісу</small></span><span>Недоступно</span>
+              </div>
+              <label class="checkout-comment">Коментар до замовлення <small>необов’язково</small>
+                <textarea name="comment" rows="3" maxlength="500" placeholder="Додаткова інформація для демо-замовлення"></textarea>
+              </label>
+            </section>
+
+            <p class="checkout-form-error" data-checkout-error role="alert" hidden></p>
+            <label class="checkout-confirm">
+              <input type="checkbox" name="demo-confirmation" required />
+              <span>Розумію, що це демонстраційне оформлення: замовлення не надсилається й оплата не проводиться. <b>*</b></span>
+            </label>
+            <button class="button button--dark button--full checkout-submit" type="submit">Підтвердити демо-замовлення <span aria-hidden="true">↗</span></button>
+            <p class="checkout-form__disclaimer">Введена інформація використовується лише для демонстрації у цій сторінці й не надсилається продавцю.</p>
+          </form>
+
+          <aside class="checkout-summary-card" aria-labelledby="checkout-summary-title">
+            <div class="checkout-summary-card__heading"><h2 id="checkout-summary-title">Ваше замовлення</h2><span data-checkout-item-count>0 товарів</span></div>
+            <div class="checkout-order-items" data-checkout-items></div>
+            <a class="checkout-summary-card__edit" href="catalog.html?openCart=1">Змінити кошик <span aria-hidden="true">↗</span></a>
+            <dl class="checkout-totals">
+              <div><dt>Товари</dt><dd data-checkout-subtotal>0 ₴</dd></div>
+              <div class="checkout-totals__discount" data-checkout-discount-row hidden><dt>Оптова знижка</dt><dd data-checkout-discount>−0 ₴</dd></div>
+              <div><dt>Доставка</dt><dd>Не розраховується</dd></div>
+              <div class="checkout-totals__total"><dt>Разом</dt><dd data-checkout-total>0 ₴</dd></div>
+            </dl>
+            <p class="checkout-summary-card__notice">Безкоштовна доставка від 1 500 ₴ зазначена на сайті як демонстраційна умова.</p>
+            <div class="checkout-summary-card__support"><span aria-hidden="true">🐾</span><span>Потрібна допомога?<a href="tel:+380501234567">050 123 45 67</a></span></div>
+          </aside>
+        </div>
+
+        <section class="checkout-complete" data-checkout-complete role="status" aria-live="polite" tabindex="-1" hidden>
+          <span aria-hidden="true">✓</span><span class="eyebrow">Демо оформлення завершено</span>
+          <h2>Дякуємо за увагу до Лапки!</h2>
+          <p>Це демонстраційне замовлення: дані не збережені й не передані, оплата не проводилася.</p>
+          <a class="button button--dark" href="catalog.html">Повернутися до каталогу <span aria-hidden="true">↗</span></a>
+        </section>
+        <div class="checkout-mobile-bar" data-checkout-mobile-bar hidden>
+          <span>Разом <strong data-checkout-mobile-total>0 ₴</strong></span>
+          <button class="button button--dark" type="submit" form="checkout-form">Оформити <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer checkout-footer">
+      <div class="container footer-bottom"><span>© <span data-current-year></span> Лапка. З турботою про хвостиків.</span><a href="delivery.html">Доставка й оплата</a><span>Демонстраційний магазин</span></div>
+    </footer>
+
+    <aside class="cookie-banner" data-cookie-banner aria-label="Налаштування cookie" hidden>
+      <div class="cookie-banner__copy">
+        <strong>Турбота про вашу приватність</strong>
+        <p>У демоверсії використовуються дані у сховищі браузера для кошика, вибраного, демо-профілю та запам’ятовування цього вибору. Аналітичні й рекламні cookie не підключені. <a href="privacy.html#cookies">Детальніше</a></p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button type="button" class="cookie-banner__necessary" data-cookie-choice="necessary">Лише необхідні</button>
+        <button type="button" class="cookie-banner__accept" data-cookie-choice="all">Прийняти всі</button>
+      </div>
+    </aside>
+  </body>
+</html>

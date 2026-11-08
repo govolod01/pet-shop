@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f5ef" />
+    <title>Лапка — турбота у кожній покупці</title>
+    <meta
+      name="description"
+      content="Інтернет-магазин товарів для собак і котів: корм, ласощі, іграшки та аксесуари."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="product-data.js" defer></script>
+    <script src="app.js" defer></script>
+    <script src="cookie-consent.js" defer></script>
+    <script src="site-navigation.js" defer></script>
+    <script src="account.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement">
+      <div class="container announcement__inner">
+        <span>Доставка безкоштовна від 1 500 ₴</span>
+        <span class="announcement__separator" aria-hidden="true">✳</span>
+        <span>Піклуємось про хвостиків щодня</span>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="brand" href="#home" aria-label="Лапка — на головну">
+          <span class="brand__icon" aria-hidden="true">лап</span>
+          <span class="brand__name">лапка<span>.</span></span>
+        </a>
+        <div class="header-catalog">
+          <a class="header-catalog__button" href="catalog.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Каталог</span></a>
+          <div class="main-nav__submenu" aria-label="Категорії каталогу">
+            <a href="catalog.html?category=food">Корм</a>
+            <a href="catalog.html?category=treats">Ласощі</a>
+            <a href="catalog.html?category=toys">Іграшки</a>
+            <a href="catalog.html?category=accessories">Аксесуари</a>
+            <a href="catalog.html?category=care">Догляд</a>
+          </div>
+        </div>
+
+        <nav class="main-nav" id="main-nav" aria-label="Головна навігація">
+          <a class="mobile-catalog-link" href="catalog.html">Каталог</a>
+          <a href="#catalog-categories">Категорії</a>
+          <a href="#about">Про нас</a>
+          <a href="index.html#contacts">Контакти</a>
+        </nav>
+
+        <div class="header__actions">
+          <a class="header-phone" href="tel:+380501234567" aria-label="Зателефонувати: 050 123 45 67">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.8 9.5 3l2 4.5-2 1.7a15.4 15.4 0 0 0 5.3 5.3l1.7-2 4.5 2-.8 2.5a3 3 0 0 1-3.1 2.1A15.5 15.5 0 0 1 4.9 6.9 3 3 0 0 1 7 3.8Z"/></svg>
+            <span>050 123 45 67</span>
+          </a>
+          <a class="favorites-button" href="favorites.html" aria-label="Показати вибране">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.7c0 5.2-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.5Z"/></svg>
+            <span>Вибране</span>
+            <span class="favorites-count" data-favorites-count>0</span>
+          </a>
+          <button class="cart-button" type="button" data-open-cart aria-label="Відкрити кошик">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2l2 10.5h9.8L20 8H7"/><circle cx="10" cy="19" r="1.2"/><circle cx="17" cy="19" r="1.2"/></svg>
+            <span>Кошик</span>
+            <span class="cart-count" data-cart-count>0</span>
+          </button>
+          <button class="mobile-menu-toggle" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-nav">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <span class="eyebrow"><span class="eyebrow__dot"></span> Магазин для хвостатих друзів</span>
+            <h1>Щасливі лапки.<br /><span>Щасливе життя.</span></h1>
+            <p>Усе, що потрібно для здоров’я, гри й затишку вашого улюбленця. Дбайливо обираємо кожну річ — ніби для свого.</p>
+            <div class="hero__actions">
+              <a href="#catalog-categories" class="button button--dark">Обрати улюбленцю <span aria-hidden="true">↗</span></a>
+              <span class="hero__caption">Для тих, кого любимо без умов</span>
+            </div>
+            <div class="hero__social-proof">
+              <div class="avatar-stack" aria-hidden="true"><span>🐶</span><span>🐱</span><span>🐕</span></div>
+              <p><strong>4.9/5</strong><span> за відгуками друзів хвостиків</span></p>
+            </div>
+          </div>
+
+          <div class="hero__art" aria-label="Собака та кіт — наші головні покупці">
+            <div class="hero__sun"></div>
+            <div class="hero__sticker hero__sticker--top">з любов’ю<br />до кожного 🐾</div>
+            <div class="hero__illustration hero__illustration--dog" aria-hidden="true">
+              <svg viewBox="0 0 400 500" focusable="false">
+                <defs>
+                  <linearGradient id="dog-fur" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3c38e"/><stop offset=".48" stop-color="#e5a56b"/><stop offset="1" stop-color="#bd7446"/></linearGradient>
+                  <linearGradient id="dog-body" x1=".12" y1="0" x2=".88" y2="1"><stop stop-color="#f2bc7e"/><stop offset=".55" stop-color="#d99255"/><stop offset="1" stop-color="#b96e43"/></linearGradient>
+                  <linearGradient id="dog-ear" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d28a5a"/><stop offset="1" stop-color="#8f4d36"/></linearGradient>
+                  <linearGradient id="dog-vest" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#668b68"/><stop offset="1" stop-color="#294b3d"/></linearGradient>
+                  <radialGradient id="dog-cream" cx=".35" cy=".2" r=".9"><stop stop-color="#fff5df"/><stop offset="1" stop-color="#e9c79e"/></radialGradient>
+                </defs>
+                <ellipse cx="204" cy="454" rx="125" ry="19" fill="#6d754c" opacity=".14"/>
+                <path d="M111 179c-40 7-51 49-41 79 7 22 26 36 49 32l19-83z" fill="url(#dog-ear)"/>
+                <path d="M287 180c41 7 52 49 42 79-7 22-26 36-49 32l-19-83z" fill="url(#dog-ear)"/>
+                <path d="M114 303c0-54 39-92 87-92s87 38 87 92v107c0 25-20 45-45 45h-84c-25 0-45-20-45-45z" fill="url(#dog-body)"/>
+                <path d="M149 382c0-28 21-51 47-51s47 23 47 51v55h-94z" fill="url(#dog-cream)"/>
+                <path d="M126 384c-1 35-5 53-18 60-8 5-7 16 4 17h37c10 0 16-8 16-18v-59zm112 0c1 35 5 53 18 60 8 5 7 16-4 17h-37c-10 0-16-8-16-18v-59z" fill="url(#dog-body)"/>
+                <path d="M88 165c0-68 49-116 112-116s112 48 112 116c0 62-43 110-112 110S88 227 88 165" fill="url(#dog-fur)"/>
+                <path d="M104 139C79 92 88 48 111 33c31-20 71 23 80 66-29-4-55 12-73 47zm192 0c25-47 16-91-7-106-31-20-71 23-80 66 29-4 55 12 73 47" fill="url(#dog-ear)"/>
+                <path d="M107 67c6-11 17-17 29-16m157 16c-6-11-17-17-29-16" fill="none" stroke="#efc49b" stroke-width="9" stroke-linecap="round" opacity=".7"/>
+                <path d="M109 142c3-51 39-86 82-94m17 194c46-9 79-42 92-82" fill="none" stroke="#fff4dd" stroke-width="7" stroke-linecap="round" opacity=".28"/>
+                <path d="M133 318c-8 30-7 70 2 96m132-92c7 23 7 55 1 77" fill="none" stroke="#fff0d4" stroke-width="6" stroke-linecap="round" opacity=".25"/>
+                <ellipse cx="151" cy="163" rx="9" ry="12" fill="#29372e"/>
+                <ellipse cx="249" cy="163" rx="9" ry="12" fill="#29372e"/>
+                <circle cx="154" cy="159" r="2.5" fill="#fff"/>
+                <circle cx="252" cy="159" r="2.5" fill="#fff"/>
+                <path d="M172 196c10-11 46-11 56 0-2 17-14 26-28 26s-26-9-28-26" fill="url(#dog-cream)"/>
+                <path d="M188 188c0-9 24-9 24 0 0 7-6 10-12 10s-12-3-12-10" fill="#51392f"/>
+                <path d="M200 198v10m0 0c-8 10-17 8-22 3m22-3c8 10 17 8 22 3" fill="none" stroke="#76513d" stroke-width="3" stroke-linecap="round"/>
+                <path d="M137 260c18 22 39 33 63 33s45-11 63-33l17 31c-19 31-48 48-80 48s-61-17-80-48z" fill="url(#dog-vest)"/>
+                <path d="m182 296 18 19 18-19-18-14z" fill="#d6ed91"/>
+                <path d="M125 190c-17 3-28 9-37 18m37-1c-17 2-29 7-39 14m189-31c17 3 28 9 37 18m-37-1c17 2 29 7 39 14" fill="none" stroke="#f6d5b3" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+              </svg>
+            </div>
+            <div class="hero__illustration hero__illustration--cat" aria-hidden="true">
+              <svg viewBox="0 0 300 360" focusable="false">
+                <defs>
+                  <linearGradient id="cat-fur" x1=".1" y1="0" x2=".9" y2="1"><stop stop-color="#fff0ce"/><stop offset=".52" stop-color="#f2bc7e"/><stop offset="1" stop-color="#c77a46"/></linearGradient>
+                  <linearGradient id="cat-body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffaf0"/><stop offset=".65" stop-color="#f0e2c9"/><stop offset="1" stop-color="#d9c7aa"/></linearGradient>
+                  <linearGradient id="cat-patch" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2b577"/><stop offset="1" stop-color="#bd7041"/></linearGradient>
+                  <linearGradient id="cat-vest" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#89a975"/><stop offset="1" stop-color="#496a4c"/></linearGradient>
+                </defs>
+                <ellipse cx="154" cy="333" rx="92" ry="13" fill="#6d754c" opacity=".14"/>
+                <path d="M207 260c61 9 71 62 44 82-21 16-46-1-37-18 8-14 27-9 29 3" fill="none" stroke="url(#cat-patch)" stroke-width="22" stroke-linecap="round"/>
+                <path d="M77 256c0-54 32-88 77-88s77 34 77 88v58H77z" fill="url(#cat-body)"/>
+                <path d="M90 251c-15 33-14 70 0 75h26c-9-28-8-49 3-73zm117-5c18 22 25 48 22 80h-34c10-28 9-51-1-69z" fill="url(#cat-patch)"/>
+                <path d="M68 98 77 28c2-13 18-16 26-5l44 55zm102-20 43-55c8-11 24-8 26 5l9 70z" fill="url(#cat-fur)"/>
+                <path d="m86 70 5-25 20 24zm171 0-5-25-20 24z" fill="#dc8d85"/>
+                <path d="M63 113c0-48 38-83 87-83s87 35 87 83c0 47-37 79-87 79s-87-32-87-79" fill="url(#cat-fur)"/>
+                <path d="M151 34c-3 32 15 45 38 48 19 3 33-8 38-20-14-20-43-33-76-28" fill="url(#cat-patch)"/>
+                <path d="M78 103c5-34 31-59 62-68m53 151c28-9 45-31 51-57" fill="none" stroke="#fff4dc" stroke-width="6" stroke-linecap="round" opacity=".3"/>
+                <path d="M66 110c11-10 24-14 38-13m94 0c14-1 27 3 38 13" fill="none" stroke="#f9dfb9" stroke-width="9" stroke-linecap="round"/>
+                <ellipse cx="112" cy="119" rx="8" ry="12" fill="#26392f"/>
+                <ellipse cx="190" cy="119" rx="8" ry="12" fill="#26392f"/>
+                <circle cx="114" cy="115" r="2.5" fill="#fff"/>
+                <circle cx="192" cy="115" r="2.5" fill="#fff"/>
+                <path d="M139 145c0-8 24-8 24 0 0 6-6 9-12 9s-12-3-12-9" fill="#b66d6e"/>
+                <path d="M151 154v8m0 0c-7 7-14 6-18 2m18-2c7 7 14 6 18 2" fill="none" stroke="#7b5148" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M135 152c-22-5-39-5-53-1m53 9c-21 1-36 5-50 12m80-20c22-5 39-5 53-1m-53 9c21 1 36 5 50 12" fill="none" stroke="#fff9ee" stroke-width="3" stroke-linecap="round"/>
+                <path d="M102 201c15 17 31 25 49 25s34-8 49-25v34c-11 15-27 22-49 22s-38-7-49-22z" fill="url(#cat-vest)"/>
+                <path d="m142 226 9 11 9-11-9-8z" fill="#f2d879"/>
+                <path d="M133 272c8 8 20 8 28 0" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="hero__sticker hero__sticker--bottom"><span>✳</span> хвостики<br />схвалюють</div>
+            <span class="hero__spark hero__spark--one" aria-hidden="true">✳</span>
+            <span class="hero__spark hero__spark--two" aria-hidden="true">✳</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits" aria-label="Наші переваги">
+        <div class="container benefits__grid">
+          <div><span class="benefit-icon">🚚</span><span><strong>Швидка доставка</strong><small>По всій Україні</small></span></div>
+          <div><span class="benefit-icon">🌿</span><span><strong>Перевірені бренди</strong><small>Якість без компромісів</small></span></div>
+          <div><span class="benefit-icon">💛</span><span><strong>Турботлива підтримка</strong><small>Допоможемо з вибором</small></span></div>
+          <div><span class="benefit-icon">↩</span><span><strong>Легке повернення</strong><small>14 днів на роздуми</small></span></div>
+        </div>
+      </section>
+
+      <section class="section categories-section" id="catalog-categories">
+        <div class="container">
+          <div class="section-heading">
+            <div><span class="eyebrow">Маємо дещо для кожного</span><h2>Що шукає ваш хвостик?</h2></div>
+            <a class="text-link" href="catalog.html">Усі товари <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="category-grid">
+            <button class="category-card category-card--dog" type="button" data-category="dog">
+              <span class="category-card__emoji">🐶</span><span><strong>Для собак</strong><small>Корм, іграшки, амуніція</small></span><span class="category-card__arrow">↗</span>
+            </button>
+            <button class="category-card category-card--cat" type="button" data-category="cat">
+              <span class="category-card__emoji">🐱</span><span><strong>Для котів</strong><small>Смаколики, дряпки, затишок</small></span><span class="category-card__arrow">↗</span>
+            </button>
+            <button class="category-card category-card--all" type="button" data-category="all">
+              <span class="category-card__emoji">🐾</span><span><strong>Для всіх</strong><small>Речі, які об’єднують</small></span><span class="category-card__arrow">↗</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section products-section" id="bestsellers">
+        <div class="container">
+          <div class="catalog-promo">
+            <div class="catalog-promo__copy">
+              <span class="catalog-promo__label"><span aria-hidden="true">✳</span> Трохи більше турботи</span>
+              <h2>Подаруйте хвостику<br />щасливий день</h2>
+              <p>Смаколики, іграшки й затишні речі, які обирають з любов’ю.</p>
+              <a class="catalog-promo__button" href="#catalog-products">Обрати улюбленцю <span aria-hidden="true">↗</span></a>
+              <span class="catalog-promo__shipping">🚚 Безкоштовна доставка від 1 500 ₴</span>
+            </div>
+            <div class="catalog-promo__art" aria-hidden="true">
+              <span class="catalog-promo__sun"></span>
+              <span class="catalog-promo__pet catalog-promo__pet--dog">🐶</span>
+              <span class="catalog-promo__pet catalog-promo__pet--cat">🐱</span>
+              <span class="catalog-promo__spark catalog-promo__spark--one">✳</span>
+              <span class="catalog-promo__spark catalog-promo__spark--two">✦</span>
+            </div>
+          </div>
+
+          <div class="catalog-promo-grid" aria-label="Спеціальні добірки">
+            <article class="catalog-promo-tile catalog-promo-tile--treats">
+              <div>
+                <span class="catalog-promo-tile__eyebrow">Маленька радість щодня</span>
+                <h3>Смаколики для хвостиків</h3>
+                <button type="button" data-promo-category="treats">Обрати ласощі <span aria-hidden="true">↗</span></button>
+              </div>
+              <span class="catalog-promo-tile__art" aria-hidden="true">🦴</span>
+            </article>
+            <article class="catalog-promo-tile catalog-promo-tile--toys">
+              <div>
+                <span class="catalog-promo-tile__eyebrow">Час для пригод</span>
+                <h3>Іграшки для веселих ігор</h3>
+                <button type="button" data-promo-category="toys">Знайти іграшку <span aria-hidden="true">↗</span></button>
+              </div>
+              <span class="catalog-promo-tile__art" aria-hidden="true">🪢</span>
+            </article>
+          </div>
+
+          <div class="section-heading section-heading--products">
+            <div><span class="eyebrow">Знайдіть усе для улюбленця</span><h2>Каталог товарів</h2></div>
+            <div class="product-tools">
+              <label class="search-box">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+                <input type="search" data-search placeholder="Знайти щось пухнасте..." aria-label="Пошук товарів" />
+              </label>
+              <label class="sort-select">
+                <span class="sr-only">Сортувати товари</span>
+                <select data-sort>
+                  <option value="popular">Спочатку популярні</option>
+                  <option value="price-low">Від дешевих</option>
+                  <option value="price-high">Від дорожчих</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="catalog-layout" id="catalog-products">
+            <button class="filters-toggle" type="button" data-filter-toggle aria-expanded="false" aria-controls="catalog-filters">
+              <span class="filters-toggle__leading" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10m-7 6h4"/><circle cx="8" cy="6" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="12" cy="18" r="1.5"/></svg>
+              </span>
+              <span class="filters-toggle__copy"><strong>Показати фільтри</strong><small>Знайдіть потрібні товари швидше</small></span>
+              <span class="filters-toggle__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+            <aside class="filters-panel" id="catalog-filters" aria-label="Фільтри товарів">
+              <div class="filters-panel__heading">
+                <h3>Фільтри</h3>
+                <button class="filters-reset" type="button" data-reset-filters>Скинути</button>
+              </div>
+              <fieldset class="filter-group">
+                <legend>Для кого</legend>
+                <label class="filter-option">
+                  <input type="checkbox" value="dog" data-pet-filter />
+                  <span>Для собак</span><small data-facet-count="dog"></small>
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="cat" data-pet-filter />
+                  <span>Для котів</span><small data-facet-count="cat"></small>
+                </label>
+              </fieldset>
+              <fieldset class="filter-group">
+                <legend>Категорія</legend>
+                <label class="filter-option">
+                  <input type="checkbox" value="food" data-category-filter />
+                  <span>Корм</span><small data-facet-count="food"></small>
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="treats" data-category-filter />
+                  <span>Ласощі</span><small data-facet-count="treats"></small>
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="toys" data-category-filter />
+                  <span>Іграшки</span><small data-facet-count="toys"></small>
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="accessories" data-category-filter />
+                  <span>Аксесуари</span><small data-facet-count="accessories"></small>
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" value="care" data-category-filter />
+                  <span>Догляд</span><small data-facet-count="care"></small>
+                </label>
+              </fieldset>
+              <fieldset class="filter-group filter-group--price">
+                <legend>Ціна, ₴</legend>
+                <div class="price-range">
+                  <label><span>Від</span><input type="number" min="0" step="10" inputmode="numeric" placeholder="0" data-price-min aria-label="Мінімальна ціна" /></label>
+                  <label><span>До</span><input type="number" min="0" step="10" inputmode="numeric" placeholder="1190" data-price-max aria-label="Максимальна ціна" /></label>
+                </div>
+              </fieldset>
+              <fieldset class="filter-group">
+                <legend>Моя добірка</legend>
+                <label class="filter-option">
+                  <input type="checkbox" data-favorites-only />
+                  <span>Лише вибране</span><small data-favorites-filter-count>0</small>
+                </label>
+              </fieldset>
+            </aside>
+
+            <div class="catalog-results">
+              <div class="catalog-results__meta"><span data-results-count aria-live="polite"></span></div>
+              <div class="product-grid" data-product-grid aria-live="polite"></div>
+              <p class="empty-state" data-empty-state hidden></p>
+            </div>
+          </div>
+          <div class="home-catalog-more">
+            <a class="button button--outline" href="catalog.html">Переглянути більше товарів <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="promo-section" id="about">
+        <div class="container promo-card">
+          <div class="promo-card__content">
+            <span class="eyebrow">Більше хвосту — більше радості</span>
+            <h2>Перший кошик?<br /><span>Лови -10% на знайомство</span></h2>
+            <p>Підпишись на добрі новини, поради й маленькі сюрпризи для вас і вашого улюбленця.</p>
+            <form class="subscribe-form" data-subscribe-form>
+              <label class="sr-only" for="subscribe-email">Ваша електронна пошта</label>
+              <input id="subscribe-email" type="email" placeholder="Ваша електронна пошта" required />
+              <button type="submit" aria-label="Підписатися">Підписатися <span aria-hidden="true">↗</span></button>
+            </form>
+            <p class="subscribe-message" data-subscribe-message aria-live="polite">Підписка демонстраційна — дані не передаються.</p>
+          </div>
+          <div class="promo-card__illustration" aria-hidden="true">
+            <div class="promo-card__circle"></div>
+            <span class="promo-card__bag">🐾</span>
+            <span class="promo-card__treat promo-card__treat--one">🦴</span>
+            <span class="promo-card__treat promo-card__treat--two">🐟</span>
+            <span class="promo-card__star">✳</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reviews-section">
+        <div class="container">
+          <div class="section-heading"><div><span class="eyebrow">Добрі слова</span><h2>Кажуть хвостики й люди</h2></div><div class="review-rating"><strong>4.9</strong><span>★★★★★<small>на основі 1 240 відгуків</small></span></div></div>
+          <div class="review-grid">
+            <blockquote class="review-card"><div class="review-stars">★★★★★</div><p>«Роккі вперше сам приніс іграшку, щоб гратися разом. Доставка швидка, а пакування таке миле!»</p><footer><span class="review-avatar">О</span><span><strong>Олена та Роккі</strong><small>з Києва · песик коргі</small></span></footer></blockquote>
+            <blockquote class="review-card"><div class="review-stars">★★★★★</div><p>«Мурка нарешті схвалила новий смаколик. А я — зручний каталог і підказки для вибору.»</p><footer><span class="review-avatar review-avatar--pink">М</span><span><strong>Марія та Мурка</strong><small>зі Львова · кішка-мандрівниця</small></span></footer></blockquote>
+            <blockquote class="review-card"><div class="review-stars">★★★★★</div><p>«Знайшли все для цуценяти в одному місці. Підтримка допомогла підібрати розмір шлейки.»</p><footer><span class="review-avatar review-avatar--blue">А</span><span><strong>Андрій і Бублик</strong><small>з Одеси · майбутній чемпіон</small></span></footer></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section service-info">
+        <div class="container">
+          <div class="service-info__heading">
+            <span class="eyebrow">Важлива інформація</span>
+            <h2>Покупки без сюрпризів</h2>
+            <p>Коротко про сервіс магазину — і про те, що поки доступне лише в демонстраційному режимі.</p>
+          </div>
+          <div class="service-info__grid">
+            <article class="service-info__card" id="delivery">
+              <div class="service-info__card-heading"><span class="service-info__icon" aria-hidden="true">🚚</span><div><span class="service-info__eyebrow">Отримання замовлення</span><h3>Доставка</h3></div></div>
+              <p>У демоформі можна обрати Нову пошту, Укрпошту, Meest або кур’єра. Інтеграції, тарифи, строки й реальне відправлення не підключені. Безкоштовна доставка від 1 500 ₴ — демонстраційна умова.</p>
+              <a href="delivery.html">Детальніше про доставку <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="service-info__card">
+              <div class="service-info__card-heading"><span class="service-info__icon service-info__icon--yellow" aria-hidden="true">💳</span><div><span class="service-info__eyebrow">Безпечна покупка</span><h3>Оплата</h3></div></div>
+              <p>Оплата карткою, онлайн-платежі та післяплата не підключені. Замовлення й платіжні дані не надсилаються — не здійснюйте оплату в цьому демо-магазині.</p>
+              <a href="delivery.html#payment">Доступні способи оплати <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="service-info__card" id="returns">
+              <div class="service-info__card-heading"><span class="service-info__icon service-info__icon--pink" aria-hidden="true">↩</span><div><span class="service-info__eyebrow">Якщо передумали</span><h3>Обмін і повернення</h3></div></div>
+              <p>Оскільки замовлення не приймаються, реальне повернення чи обмін зараз оформити неможливо. Умови продавця мають бути підтверджені й опубліковані до запуску продажів.</p>
+              <a href="delivery.html#returns">Умови повернення <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="service-info__card">
+              <div class="service-info__card-heading"><span class="service-info__icon service-info__icon--blue" aria-hidden="true">💬</span><div><span class="service-info__eyebrow">Ми на зв’язку</span><h3>Контакти</h3></div></div>
+              <p>Телефон: <a class="service-info__contact" href="tel:+380501234567">050 123 45 67</a><br />Пошта: <a class="service-info__contact" href="mailto:hello@lapka.shop">hello@lapka.shop</a><br />Щодня, 9:00–20:00. Контактні дані демонстраційні.</p>
+              <a href="#contacts">До контактів у футері <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter-strip">
+        <div class="container newsletter-strip__inner"><span>🐾</span><p>Не пропускай добрі новини — <strong>підписуйся на хвостаті новинки</strong></p><a href="#subscribe-email">Хочу бути в курсі <span aria-hidden="true">↗</span></a></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="#home"><span class="brand__icon" aria-hidden="true">лап</span><span class="brand__name">лапка<span>.</span></span></a>
+          <p>Улюблені речі для тих,<br />кого любимо без умов.</p>
+          <div class="footer-socials" aria-label="Соціальні мережі"><span aria-label="Instagram — посилання буде додано" title="Instagram — посилання буде додано">ig</span><span aria-label="Facebook — посилання буде додано" title="Facebook — посилання буде додано">f</span><span aria-label="Telegram — посилання буде додано" title="Telegram — посилання буде додано">tg</span></div>
+        </div>
+        <div class="footer-column"><strong>Покупцям</strong><a href="catalog.html">Каталог</a><a href="#catalog-categories">Категорії</a><a href="#about">Про магазин</a></div>
+        <div class="footer-column"><strong>Допомога</strong><a href="delivery.html">Доставка й оплата</a><a href="#returns">Обмін і повернення</a><a href="#contacts">Контакти</a></div>
+        <div class="footer-column"><strong>Інформація</strong><a href="privacy.html">Політика конфіденційності</a><a href="offer.html">Договір публічної оферти</a><a href="terms.html">Умови використання</a></div>
+        <div class="footer-column footer-column--contact" id="contacts"><strong>Ми на зв’язку</strong><a href="tel:+380501234567">050 123 45 67</a><a href="mailto:hello@lapka.shop">hello@lapka.shop</a><span>Щодня, 9:00–20:00</span></div>
+      </div>
+      <div class="container footer-bottom"><span>© <span data-current-year></span> Лапка. Зроблено з любов’ю до хвостиків.</span><span>Демонстраційний магазин · оплата та обробка замовлень не підключені</span></div>
+    </footer>
+
+    <div class="cart-backdrop" data-cart-backdrop></div>
+    <aside class="cart-drawer" data-cart-drawer aria-labelledby="cart-title" aria-hidden="true">
+      <div class="cart-drawer__header"><div><span class="eyebrow">Ваші знахідки</span><h2 id="cart-title">Кошик <span data-cart-title-count>(0)</span></h2></div><button class="icon-button" type="button" data-close-cart aria-label="Закрити кошик">×</button></div>
+      <div class="cart-items" data-cart-items></div>
+      <div class="cart-empty" data-cart-empty><span>🐾</span><h3>Тут поки тихенько</h3><p>Додайте щось смачненьке або цікаве для свого друга.</p><button class="button button--dark" type="button" data-continue-shopping>До покупок</button></div>
+      <div class="cart-drawer__footer" data-cart-footer hidden>
+        <div class="cart-subtotal"><span>Разом</span><strong data-cart-total>0 ₴</strong></div>
+        <p>Демо-умова: безкоштовна доставка від 1 500 ₴</p>
+        <a class="button button--dark button--full" href="checkout.html" data-checkout>Оформити замовлення <span aria-hidden="true">↗</span></a>
+        <small>Демо-оформлення: замовлення не надсилається й оплата не проводиться.</small>
+      </div>
+    </aside>
+
+    <aside class="cookie-banner" data-cookie-banner aria-label="Налаштування cookie" hidden>
+      <div class="cookie-banner__copy">
+        <strong>Турбота про вашу приватність</strong>
+        <p>У демоверсії використовуються дані у сховищі браузера для кошика, вибраного, демо-профілю та запам’ятовування цього вибору. Аналітичні й рекламні cookie не підключені. <a href="privacy.html#cookies">Детальніше</a></p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button type="button" class="cookie-banner__necessary" data-cookie-choice="necessary">Лише необхідні</button>
+        <button type="button" class="cookie-banner__accept" data-cookie-choice="all">Прийняти всі</button>
+      </div>
+    </aside>
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+  </body>
+</html>

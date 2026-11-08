@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f5ef" />
+    <title>Особистий кабінет — Лапка</title>
+    <meta name="description" content="Профіль, лояльність, замовлення, адреси та вибране в особистому кабінеті Лапки." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="product-data.js" defer></script>
+    <script src="site-navigation.js" defer></script>
+    <script src="cookie-consent.js" defer></script>
+    <script src="account.js" defer></script>
+    <script src="cabinet.js" defer></script>
+  </head>
+  <body data-require-account="true">
+    <div class="announcement">
+      <div class="container announcement__inner">
+        <span>Доставка безкоштовна від 1 500 ₴</span>
+        <span class="announcement__separator" aria-hidden="true">✳</span>
+        <span>Піклуємось про хвостиків щодня</span>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="brand" href="index.html#home" aria-label="Лапка — на головну">
+          <span class="brand__icon" aria-hidden="true">лап</span>
+          <span class="brand__name">лапка<span>.</span></span>
+        </a>
+        <div class="header-catalog">
+          <a class="header-catalog__button" href="catalog.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Каталог</span></a>
+          <div class="main-nav__submenu" aria-label="Категорії каталогу">
+            <a href="catalog.html?category=food">Корм</a>
+            <a href="catalog.html?category=treats">Ласощі</a>
+            <a href="catalog.html?category=toys">Іграшки</a>
+            <a href="catalog.html?category=accessories">Аксесуари</a>
+            <a href="catalog.html?category=care">Догляд</a>
+          </div>
+        </div>
+        <nav class="main-nav" id="main-nav" aria-label="Головна навігація">
+          <a href="index.html#catalog-categories">Категорії</a>
+          <a href="index.html#about">Про нас</a>
+          <a href="index.html#contacts">Контакти</a>
+        </nav>
+        <div class="header__actions">
+          <a class="favorites-button" href="favorites.html" aria-label="Показати вибране">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.7c0 5.2-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.5Z"/></svg>
+            <span>Вибране</span><span class="favorites-count" data-cabinet-favorites-header>0</span>
+          </a>
+          <a class="cart-button" href="catalog.html?openCart=1" aria-label="Відкрити кошик">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2l2 10.5h9.8L20 8H7"/><circle cx="10" cy="19" r="1.2"/><circle cx="17" cy="19" r="1.2"/></svg>
+            <span>Кошик</span><span class="cart-count" data-cabinet-cart-header>0</span>
+          </a>
+          <button class="mobile-menu-toggle" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-nav">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="cabinet-page">
+      <div class="container">
+        <div class="cabinet-page__heading">
+          <div>
+            <a class="catalog-breadcrumbs__back" href="catalog.html">← Повернутися до магазину</a>
+            <h1>Особистий кабінет</h1>
+          </div>
+          <p>Ваші дані та улюблені речі в одному місці</p>
+        </div>
+
+        <div class="cabinet-layout">
+          <aside class="cabinet-sidebar" aria-label="Навігація кабінету">
+            <div class="cabinet-sidebar__user">
+              <span class="cabinet-sidebar__avatar" data-cabinet-avatar aria-hidden="true">Л</span>
+              <span><strong data-cabinet-user-name></strong><small>Демо-профіль</small></span>
+            </div>
+            <nav class="cabinet-menu" aria-label="Розділи кабінету">
+              <button type="button" data-cabinet-tab="profile" aria-current="page"><span aria-hidden="true">◉</span> Профіль</button>
+              <button type="button" data-cabinet-tab="loyalty"><span aria-hidden="true">✦</span> Система лояльності</button>
+              <button type="button" data-cabinet-tab="orders"><span aria-hidden="true">▤</span> Мої замовлення</button>
+              <button type="button" data-cabinet-tab="returns"><span aria-hidden="true">↩</span> Повернення</button>
+              <button type="button" data-cabinet-tab="addresses"><span aria-hidden="true">⌖</span> Мої адреси</button>
+              <button type="button" data-cabinet-tab="favorites"><span aria-hidden="true">♡</span> Обране <span class="cabinet-menu__count" data-cabinet-favorites-count>0</span></button>
+              <button type="button" data-cabinet-tab="settings"><span aria-hidden="true">⚙</span> Налаштування</button>
+            </nav>
+            <button class="cabinet-sidebar__logout" type="button" data-cabinet-logout>↪ <span>Вийти з кабінету</span></button>
+            <p class="cabinet-status" data-cabinet-status role="status" aria-live="polite" hidden></p>
+          </aside>
+
+          <div class="cabinet-content">
+            <section class="cabinet-panel" data-cabinet-panel="profile" aria-labelledby="cabinet-profile-title">
+              <div class="cabinet-panel__heading">
+                <div class="cabinet-panel__topline">
+                  <span class="eyebrow">Мій профіль</span>
+                  <button class="cabinet-edit-button" type="button" data-cabinet-go="settings">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5 4 4M4 20l4.2-.8L19 8.4a2.1 2.1 0 0 0-3-3L5.2 16.2 4 20Z"/></svg>
+                    <span>Редагувати</span>
+                  </button>
+                </div>
+                <h2 id="cabinet-profile-title">Вітаємо, <span data-cabinet-greeting></span>!</h2>
+                <p>Тут зібрана інформація вашого демонстраційного профілю.</p>
+              </div>
+              <div class="cabinet-info-card">
+                <div class="cabinet-info-card__heading"><h3>Особисті дані</h3><span class="cabinet-demo-pill">ДЕМО</span></div>
+                <dl class="cabinet-profile-details">
+                  <div><dt>Ім’я</dt><dd data-cabinet-name></dd></div>
+                  <div><dt>Електронна пошта</dt><dd data-cabinet-email></dd></div>
+                </dl>
+                <p class="cabinet-muted">Керуйте контактними даними в розділі «Налаштування».</p>
+              </div>
+              <div class="cabinet-info-card cabinet-delivery-card">
+                <div class="cabinet-info-card__heading">
+                  <div><span class="eyebrow">Доставка</span><h3>Ваші вподобання</h3></div>
+                  <span class="cabinet-delivery-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false"><path d="M3 6.5h11v11H3zM14 10h4l3 3.5v4h-7z"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>
+                  </span>
+                </div>
+                <div class="cabinet-delivery-card__favorite">
+                  <span>Найчастіше обираєте</span>
+                  <strong data-cabinet-frequent-delivery>Ще немає даних</strong>
+                  <small data-cabinet-frequent-delivery-count>Після демо-оформлення тут з’явиться статистика</small>
+                </div>
+                <form class="cabinet-default-delivery" data-default-delivery-form>
+                  <label for="default-delivery-service">Служба доставки за замовчуванням</label>
+                  <div class="cabinet-default-delivery__controls">
+                    <div class="cabinet-delivery-select">
+                      <select id="default-delivery-service" name="deliveryService" required>
+                        <option value="Нова пошта">Нова пошта</option>
+                        <option value="Укрпошта">Укрпошта</option>
+                        <option value="Meest">Meest</option>
+                        <option value="Кур’єрська доставка">Кур’єрська доставка</option>
+                      </select>
+                    </div>
+                    <button class="button button--dark" type="submit">Зберегти</button>
+                  </div>
+                  <p class="cabinet-delivery-status" data-delivery-status role="status" aria-live="polite" hidden></p>
+                </form>
+                <p class="cabinet-muted">У демоверсії зберігається лише вибір служби та зведений лічильник виборів у цьому браузері. Дані замовлень не зберігаються.</p>
+              </div>
+              <div class="cabinet-quick-links">
+                <a href="catalog.html?openCart=1"><span aria-hidden="true">🛍</span><strong data-cabinet-cart-count>0</strong><small>товарів у кошику</small></a>
+                <button type="button" data-cabinet-go="favorites"><span aria-hidden="true">♡</span><strong data-cabinet-favorites-summary>0</strong><small>товарів у вибраному</small></button>
+              </div>
+            </section>
+
+            <section class="cabinet-panel" data-cabinet-panel="loyalty" aria-labelledby="cabinet-loyalty-title" hidden>
+              <div class="cabinet-panel__heading"><span class="eyebrow">Більше приємного</span><h2 id="cabinet-loyalty-title">Система лояльності</h2><p>Демо-огляд майбутніх бонусів магазину.</p></div>
+              <div class="loyalty-card">
+                <span class="loyalty-card__spark" aria-hidden="true">✳</span>
+                <span class="loyalty-card__eyebrow">ВАШ ДЕМО-БАЛАНС</span>
+                <strong>0 <small>балів</small></strong>
+                <p>Нарахування та списання бонусів ще не підключені.</p>
+              </div>
+              <div class="cabinet-info-card"><h3>Як працюватиме програма</h3><p class="cabinet-muted">Після запуску магазину тут можна буде переглядати бонусний баланс, історію нарахувань і правила програми. Зараз це лише макет — бонуси не мають грошової вартості.</p></div>
+            </section>
+
+            <section class="cabinet-panel" data-cabinet-panel="orders" aria-labelledby="cabinet-orders-title" hidden>
+              <div class="cabinet-panel__heading"><span class="eyebrow">Історія покупок</span><h2 id="cabinet-orders-title">Мої замовлення</h2><p>Переглядайте статус та історію ваших покупок.</p></div>
+              <div class="cabinet-empty"><span aria-hidden="true">📦</span><h3>Замовлень поки немає</h3><p>У демоверсії оформлення замовлення не зберігається. Ваші майбутні покупки з’являться тут після підключення магазину.</p><a class="button button--dark" href="catalog.html">До каталогу <span aria-hidden="true">↗</span></a></div>
+            </section>
+
+            <section class="cabinet-panel" data-cabinet-panel="returns" aria-labelledby="cabinet-returns-title" hidden>
+              <div class="cabinet-panel__heading"><span class="eyebrow">Покупки без турбот</span><h2 id="cabinet-returns-title">Повернення та обмін</h2><p>Інформація про запити на повернення ваших покупок.</p></div>
+              <div class="cabinet-empty cabinet-returns-empty">
+                <span aria-hidden="true">↩</span>
+                <h3>Поки немає запитів</h3>
+                <p>У демоверсії замовлення та звернення щодо повернення не зберігаються. Після підключення магазину тут відображатиметься історія ваших запитів.</p>
+                <div class="cabinet-returns-empty__actions">
+                  <a class="button button--outline" href="index.html#returns">Умови обміну й повернення</a>
+                  <a class="button button--dark" href="mailto:hello@lapka.shop">Написати нам</a>
+                </div>
+              </div>
+            </section>
+
+            <section class="cabinet-panel" data-cabinet-panel="addresses" aria-labelledby="cabinet-addresses-title" hidden>
+              <div class="cabinet-panel__heading"><span class="eyebrow">Швидше оформлення</span><h2 id="cabinet-addresses-title">Мої адреси</h2><p>Збережені адреси доставки будуть доступні в цьому розділі.</p></div>
+              <div class="cabinet-empty"><span aria-hidden="true">⌖</span><h3>Адрес ще не додано</h3><p>Збереження адрес та інтеграція зі службами доставки поки не підключені.</p><a class="button button--outline" href="delivery.html">Умови доставки</a></div>
+            </section>
+
+            <section class="cabinet-panel" data-cabinet-panel="favorites" aria-labelledby="cabinet-favorites-title" hidden>
+              <div class="cabinet-panel__heading"><span class="eyebrow">Збережені знахідки</span><h2 id="cabinet-favorites-title">Обране</h2><p>Товари, які ви зберегли для себе.</p></div>
+              <div class="cabinet-favorites-list" data-cabinet-favorites-list></div>
+              <div class="cabinet-empty" data-cabinet-favorites-empty hidden><span aria-hidden="true">♡</span><h3>Поки нічого не збережено</h3><p>Натисніть на сердечко в картці товару, щоб додати його сюди.</p><a class="button button--dark" href="catalog.html">Знайти товари <span aria-hidden="true">↗</span></a></div>
+            </section>
+
+            <section class="cabinet-panel" data-cabinet-panel="settings" aria-labelledby="cabinet-settings-title" hidden>
+              <div class="cabinet-panel__heading"><span class="eyebrow">Приватність і доступ</span><h2 id="cabinet-settings-title">Налаштування</h2><p>Оновіть контактні дані демо-профілю.</p></div>
+              <div class="cabinet-info-card cabinet-settings-card">
+                <h3>Особисті дані</h3>
+                <form class="cabinet-settings-form" data-cabinet-settings-form>
+                  <label>Ім’я
+                    <input type="text" name="name" autocomplete="name" maxlength="80" required />
+                  </label>
+                  <label>Електронна пошта
+                    <input type="email" name="email" autocomplete="email" maxlength="254" required />
+                  </label>
+                  <p class="cabinet-settings-status" data-settings-status role="status" aria-live="polite" hidden></p>
+                  <button class="button button--dark" type="submit">Зберегти зміни <span aria-hidden="true">↗</span></button>
+                </form>
+              </div>
+              <div class="cabinet-info-card cabinet-password-card">
+                <div><h3>Пароль і безпека</h3><p class="cabinet-muted">Демо-вхід не використовує пароль, а профіль зберігається лише в цьому браузері. Зміна пароля стане доступною після підключення сервера та захищеної авторизації.</p></div>
+                <button class="button button--outline" type="button" disabled>Зміна пароля недоступна</button>
+              </div>
+              <p class="cabinet-settings-privacy">Не вводьте справжні приватні дані: зараз зміни зберігаються у localStorage браузера й не захищені обліковим записом.</p>
+            </section>
+          </div>
+        </div>
+        <p class="cabinet-demo-notice">Демонстраційний кабінет: дані зберігаються лише у цьому браузері. Реальні замовлення, адреси, бонуси та захищена авторизація не підключені.</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-brand"><a class="brand" href="index.html#home"><span class="brand__icon" aria-hidden="true">лап</span><span class="brand__name">лапка<span>.</span></span></a><p>З турботою про тих, хто зустрічає нас біля дверей.</p></div>
+        <div class="footer-column"><strong>Покупцям</strong><a href="catalog.html">Каталог</a><a href="index.html#catalog-categories">Категорії</a></div>
+        <div class="footer-column"><strong>Допомога</strong><a href="delivery.html">Доставка й оплата</a><a href="index.html#contacts">Контакти</a></div>
+        <div class="footer-column"><strong>Інформація</strong><a href="privacy.html">Політика конфіденційності</a><a href="offer.html">Договір публічної оферти</a><a href="terms.html">Умови використання</a></div>
+        <div class="footer-column footer-column--contact"><strong>Ми на зв’язку</strong><a href="tel:+380501234567">050 123 45 67</a><a href="mailto:hello@lapka.shop">hello@lapka.shop</a></div>
+      </div>
+      <div class="container footer-bottom"><span>© <span data-current-year></span> Лапка. Зроблено з любов’ю до хвостиків.</span><span>Демонстраційний магазин</span></div>
+    </footer>
+    <aside class="cookie-banner" data-cookie-banner aria-label="Налаштування cookie" hidden>
+      <div class="cookie-banner__copy"><strong>Турбота про вашу приватність</strong><p>У демоверсії використовуються дані у сховищі браузера для кошика, вибраного, демо-профілю та запам’ятовування цього вибору. Аналітичні й рекламні cookie не підключені. <a href="privacy.html#cookies">Детальніше</a></p></div>
+      <div class="cookie-banner__actions"><button type="button" class="cookie-banner__necessary" data-cookie-choice="necessary">Лише необхідні</button><button type="button" class="cookie-banner__accept" data-cookie-choice="all">Прийняти всі</button></div>
+    </aside>
+  </body>
+</html>

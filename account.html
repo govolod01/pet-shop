@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f5ef" />
+    <title>Особистий кабінет — Лапка</title>
+    <meta name="description" content="Увійдіть у демонстраційний особистий кабінет магазину Лапка." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="cookie-consent.js" defer></script>
+    <script src="site-navigation.js" defer></script>
+    <script src="account.js" defer></script>
+    <script src="account-page.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement">
+      <div class="container announcement__inner">
+        <span>Доставка безкоштовна від 1 500 ₴</span>
+        <span class="announcement__separator" aria-hidden="true">✳</span>
+        <span>Піклуємось про хвостиків щодня</span>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="brand" href="index.html#home" aria-label="Лапка — на головну">
+          <span class="brand__icon" aria-hidden="true">лап</span>
+          <span class="brand__name">лапка<span>.</span></span>
+        </a>
+        <div class="header-catalog">
+          <a class="header-catalog__button" href="catalog.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Каталог</span></a>
+          <div class="main-nav__submenu" aria-label="Категорії каталогу">
+            <a href="catalog.html?category=food">Корм</a>
+            <a href="catalog.html?category=treats">Ласощі</a>
+            <a href="catalog.html?category=toys">Іграшки</a>
+            <a href="catalog.html?category=accessories">Аксесуари</a>
+            <a href="catalog.html?category=care">Догляд</a>
+          </div>
+        </div>
+        <nav class="main-nav" id="main-nav" aria-label="Головна навігація">
+          <a href="index.html#catalog-categories">Категорії</a>
+          <a href="index.html#about">Про нас</a>
+          <a href="index.html#contacts">Контакти</a>
+        </nav>
+        <div class="header__actions">
+          <a class="favorites-button" href="favorites.html" aria-label="Показати вибране">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.7c0 5.2-8.8 10.1-8.8 10.1S3.2 13.9 3.2 8.7A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.5Z"/></svg>
+            <span>Вибране</span><span class="favorites-count" data-account-favorites-header>0</span>
+          </a>
+          <a class="cart-button" href="catalog.html?openCart=1" aria-label="Відкрити кошик">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2l2 10.5h9.8L20 8H7"/><circle cx="10" cy="19" r="1.2"/><circle cx="17" cy="19" r="1.2"/></svg>
+            <span>Кошик</span><span class="cart-count" data-account-cart-header>0</span>
+          </a>
+          <button class="mobile-menu-toggle" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-nav">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="account-page">
+      <div class="container account-page__layout">
+        <section class="account-page__intro">
+          <span class="eyebrow"><span class="eyebrow__dot"></span> Особистий простір</span>
+          <h1>Усе важливе<br /><span>для вас і хвостика.</span></h1>
+          <p>Збережені товари та кошик завжди під рукою — у вашому демо-кабінеті.</p>
+          <div class="account-page__benefit"><span aria-hidden="true">♡</span><span><strong>Ваші улюблені товари</strong><small>Поверніться до них будь-коли</small></span></div>
+          <div class="account-page__benefit"><span aria-hidden="true">🛍</span><span><strong>Кошик поруч</strong><small>Переглядайте зібрані покупки</small></span></div>
+          <span class="account-page__paw" aria-hidden="true">🐾</span>
+        </section>
+
+        <section class="account-page__card" aria-labelledby="account-page-title">
+          <a class="account-page__back" href="catalog.html">← Повернутися до товарів</a>
+          <p class="account-status" data-account-status role="status" aria-live="polite" hidden></p>
+
+          <section data-account-login aria-labelledby="account-page-title">
+            <span class="eyebrow">Вітаємо у Лапці</span>
+            <h2 id="account-page-title">Увійти до кабінету</h2>
+            <p class="account-page__card-intro">Вкажіть ім’я та електронну пошту, щоб відкрити демо-профіль.</p>
+            <form class="account-form" data-account-form>
+              <label>Ваше ім’я
+                <input name="name" autocomplete="name" maxlength="80" required placeholder="Наприклад, Олена" />
+              </label>
+              <label>Електронна пошта
+                <input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="name@example.com" />
+              </label>
+              <button class="button button--dark button--full" type="submit">Увійти <span aria-hidden="true">↗</span></button>
+            </form>
+            <p class="account-demo-note">Демо-режим: справжні облікові записи та авторизація ще не підключені. Пароль не використовується. Ім’я та email зберігаються лише у сховищі цього браузера. Вводьте тестові дані.</p>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-brand"><a class="brand" href="index.html#home"><span class="brand__icon" aria-hidden="true">лап</span><span class="brand__name">лапка<span>.</span></span></a><p>З турботою про тих, хто зустрічає нас біля дверей.</p></div>
+        <div class="footer-column"><strong>Покупцям</strong><a href="catalog.html">Каталог</a><a href="index.html#catalog-categories">Категорії</a></div>
+        <div class="footer-column"><strong>Допомога</strong><a href="delivery.html">Доставка й оплата</a><a href="index.html#contacts">Контакти</a></div>
+        <div class="footer-column"><strong>Інформація</strong><a href="privacy.html">Політика конфіденційності</a><a href="offer.html">Договір публічної оферти</a><a href="terms.html">Умови використання</a></div>
+        <div class="footer-column footer-column--contact"><strong>Ми на зв’язку</strong><a href="tel:+380501234567">050 123 45 67</a><a href="mailto:hello@lapka.shop">hello@lapka.shop</a></div>
+      </div>
+      <div class="container footer-bottom"><span>© <span data-current-year></span> Лапка. Зроблено з любов’ю до хвостиків.</span><span>Демонстраційний магазин</span></div>
+    </footer>
+
+    <aside class="cookie-banner" data-cookie-banner aria-label="Налаштування cookie" hidden>
+      <div class="cookie-banner__copy"><strong>Турбота про вашу приватність</strong><p>У демоверсії використовуються дані у сховищі браузера для кошика, вибраного, демо-профілю та запам’ятовування цього вибору. Аналітичні й рекламні cookie не підключені. <a href="privacy.html#cookies">Детальніше</a></p></div>
+      <div class="cookie-banner__actions"><button type="button" class="cookie-banner__necessary" data-cookie-choice="necessary">Лише необхідні</button><button type="button" class="cookie-banner__accept" data-cookie-choice="all">Прийняти всі</button></div>
+    </aside>
+  </body>
+</html>
